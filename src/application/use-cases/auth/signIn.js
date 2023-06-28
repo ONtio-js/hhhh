@@ -1,5 +1,4 @@
-const signIn = (userInfo,makeuserDb,authservice) =>{
-    const {email, password} = userInfo;
+const signIn = (email,password,makeuserDb,authservice) =>{
     if(!email || !password){
         const error = new Error('email and password muust not be empty');
         error.statusCode = 401;
@@ -9,13 +8,13 @@ const signIn = (userInfo,makeuserDb,authservice) =>{
     .then((user) => {
         if(!user.length) {
             const error = new Error('Email not registered yet');
-            error.statusCode = 401;
+            error.statusCode = 400;
             throw error;
         }
         const isMatch = authservice.compare(password,user[0].password);
         if(!isMatch) {
             const error = new Error(' incorrect Password');
-            error.statusCode = 401;
+            error.statusCode = 400;
             throw error;
         }
         const payload = {

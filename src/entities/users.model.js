@@ -8,7 +8,6 @@ const UserModel = (userInfo) => {
         getEmail: () => email,
         getRole: () => role,
         getCreatedAt: () => createdAt,
-        getUpdatedAt: () => updatedAt
     });
 }
 

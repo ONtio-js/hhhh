@@ -1,8 +1,11 @@
+require('dotenv').config();
 const config = {
-    port: process.env.PORT || 8080,
-    ip: process.env.HOST || '0.0.0.0',
+    port: process.env.PORT,
+    ip: process.env.HOST,
     mongo: {
-        uri:process.env.MONGO_URL || 'mongodb://localhost:27017/auth_api'
+        uri:process.env.MONGO_URL
     },
-    jwtSecret: process.env.JWT_SECRET || "hxeyt%_-894$#$%&'"
+    jwtSecret: process.env.JWT_SECRET
 }
+
+module.exports = config

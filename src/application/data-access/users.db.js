@@ -52,7 +52,7 @@
 //     });
 // }
 
-// module.exports = {makeUserDb};
+
 const makeUserDb = (repository)  => {
     const findByProperty = (params) => repository.findByProperty(params);
     const countAll = (params) => repository.countAll(params);
@@ -68,3 +68,4 @@ const makeUserDb = (repository)  => {
       deleteById
     });
   }
+  module.exports = makeUserDb;
